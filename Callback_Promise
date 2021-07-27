@@ -1,0 +1,50 @@
+//callbacks
+const func = () => {
+  console.log('my function was called')
+}
+
+
+function myName(param) {
+    if (typeof param === "string") {
+        console.log(param);
+    }
+    if (typeof (param) === "function"){
+param();
+}
+}
+
+myName("my string");
+myName(func);
+
+
+const endOfTimer = () => {
+  console.log("time has elapsed");
+}
+setTimeout(endOfTimer, 3000);
+
+setInterval(function(){
+  console.log(++counter);
+}, 1000);
+
+
+
+
+//using promise
+
+let promise = new promise(function(myRelove, myReject){
+  //some kind of long running operation
+  let wasSuccessful = true;
+  if(wasSuccessful){
+    myResolve("Operation was successful");
+  }else{
+    myReject("operation failed");
+  }
+});
+
+promise.then(function(resolve){
+  console.log(resolve);
+},
+function(reject){
+  console.log(reject);
+}            
+);
